@@ -13,11 +13,15 @@ p.loadSDF("world.sdf")
 
 pyrosim.Prepare_To_Simulate("body.urdf")
 backLegSensorValues = np.zeros(1000)
+frontLegSensorValues = np.zeros(1000)
 for i in range(0, 1000):
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
+    frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
     time.sleep(1/60)
 
 np.save('data/back_leg_sensor_values.npy', backLegSensorValues)
+np.save('data/front_leg_sensor_values.npy', frontLegSensorValues)
 p.disconnect()
-print(backLegSensorValues)
+# print(backLegSensorValues)
+# print(frontLegSensorValues)
