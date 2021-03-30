@@ -1,5 +1,3 @@
-import constants as c
-import numpy as np
 import pybullet as p
 import pyrosim.pyrosim as pyrosim
 
