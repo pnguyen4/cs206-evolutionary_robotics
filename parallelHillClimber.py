@@ -9,8 +9,8 @@ class PARALLEL_HILL_CLIMBER:
     def __init__(self):
         if glob.glob("brain*.nndf"):
             os.system("rm brain*.nndf")
-        if glob.glob("fitness*.nndf"):
-            os.system("rm fitness*.nndf")
+        if glob.glob("fitness*.txt"):
+            os.system("rm fitness*.txt")
         self.parents = {}
         self.nextAvailableID = 0
         for i in range(0, c.populationSize):

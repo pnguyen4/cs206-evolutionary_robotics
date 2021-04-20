@@ -34,4 +34,4 @@ class SIMULATION:
             self.robot.Think()
             self.robot.Act(i)
             if self.directOrGui == "GUI":
-                time.sleep(1/60)
+                time.sleep(1/15)

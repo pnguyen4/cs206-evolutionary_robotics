@@ -35,7 +35,8 @@ class ROBOT:
         for neuronName in self.nn.Get_Neuron_Names():
             if self.nn.Is_Motor_Neuron(neuronName):
                 jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
-                desiredAngle = self.nn.Get_Value_Of(neuronName) * c.motorJointRange
+                desiredAngle = \
+                    self.nn.Get_Value_Of(neuronName) * c.motorJointRange
                 self.motors[jointName].Set_Value(self, desiredAngle)
                 # print(f'{neuronName}, {jointName}, {desiredAngle}')
 
@@ -47,6 +48,9 @@ class ROBOT:
         stateOfLinkZero = p.getLinkState(self.robot, 0)
         positionOfLinkZero = stateOfLinkZero[0]
         xCoordinateOfLinkZero = positionOfLinkZero[0]
+        # basePosAndOrient = p.getBasePositionAndOrientation(self.robot)
+        # basePosition = basePosAndOrient[0]
+        # xPosition = basePosition[0]
         f = open(f"tmp{self.solutionID}.txt", "w")
         f.write(str(xCoordinateOfLinkZero))
         f.close()

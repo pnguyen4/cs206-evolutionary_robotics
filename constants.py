@@ -5,10 +5,10 @@ frequency = 10
 phaseOffset = 0
 
 numTimeSteps = 1000
-numberOfGenerations = 10
-populationSize = 10
+numberOfGenerations = 1
+populationSize = 1
 
-numSensorNeurons = 9
-numMotorNeurons = 8
+numSensorNeurons = 1
+numMotorNeurons = 1
 
 motorJointRange = 0.4
